@@ -1,0 +1,149 @@
+{
+  "main": {
+    "id": "9c2a0663a76b8889",
+    "type": "split",
+    "children": [
+      {
+        "id": "edb68bd2d6be7e9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ba9e165825d7fdec",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "991e498abe6071c6",
+    "type": "split",
+    "children": [
+      {
+        "id": "c72475434773e928",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cf5964c85f34266c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fcb8a47ee02a54e4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "67ecac18094bded7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "83da2a7cc78bc91c",
+    "type": "split",
+    "children": [
+      {
+        "id": "9388b763fc1e0b49",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2fc10eab8da34361",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "dce14dc3848bbc92",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b7e7435d18a4d72c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "f41eb6b9ae0a4a01",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo canvas": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "cf5964c85f34266c",
+  "lastOpenFiles": [
+    "Pasted image 20240130220222.png",
+    "Memoria.md",
+    "hx711F_EN.pdf",
+    "esp-c3-32s-kit-v1.0_specification.pdf",
+    "esp32-c3_datasheet_en.pdf"
+  ]
+}
