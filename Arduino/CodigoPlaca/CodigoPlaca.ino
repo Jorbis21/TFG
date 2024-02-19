@@ -14,7 +14,7 @@ BLEServer *pServer = NULL;
 BLECharacteristic * pTxCharacteristic;
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
-float txValue = 0.0;//this is the data send
+String txValue;//this is the data send
 
 #define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E" // UART service UUID
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
@@ -126,14 +126,17 @@ void setup() {
 void loop() {
   if (deviceConnected) {
     Serial.print("one reading:\t");
-    txValue = scale.get_units();
-    Serial.print(txValue, 1);
-    pTxCharacteristic->setValue(txValue);
+    txValue = String(scale.get_units(), 3);
+    Serial.print(txValue);
+    pTxCharacteristic->setValue(txValue.c_str());
     pTxCharacteristic->notify();
+
+
+
     Serial.print("\t| average:\t");
-    txValue = scale.get_units(10);
-    Serial.println(txValue, 1);
-    pTxCharacteristic->setValue(txValue);
+    txValue = String(scale.get_units(10), 3);
+    Serial.println(txValue);
+    pTxCharacteristic->setValue(txValue.c_str());
     pTxCharacteristic->notify();
 
     scale.power_down();			        // put the ADC in sleep mode
