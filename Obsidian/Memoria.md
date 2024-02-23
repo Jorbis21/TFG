@@ -37,3 +37,4 @@ SCK -> IO3 (PIN 4)
 GND -> GND (PIN 14)
 
 Para el desarrollo del software que usa la placa, vamos a usar dos ejemplos que vienen en arduino, el de BLE_uart de los ejemplos de ESP32, y el ejemplo de la librería de Bogdan Necula para el conversor analogico digital Hx711.
+

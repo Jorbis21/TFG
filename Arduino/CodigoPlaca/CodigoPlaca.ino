@@ -35,16 +35,21 @@ class MyServerCallbacks: public BLEServerCallbacks {
 //haga la tara y lo de la sincronizacion
 class MyCallbacks: public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
-      std::string rxValue = pCharacteristic->getValue();
-
-      if (rxValue.length() > 0) {
-        Serial.println("*********");
-        Serial.print("Received Value: ");
-        for (int i = 0; i < rxValue.length(); i++)
-          Serial.print(rxValue[i]);
-
-        Serial.println();
-        Serial.println("*********");
+      char rxValue = pCharacteristic->getValue();
+      Switch(){
+        case 't':
+          scale.tare();
+          pTxCharacteristic->setValue("Tara realizada");
+          pTxCharacteristic->notify();
+          break;
+        case 's':
+          //hay que ver si se le envia una variable para para la calibracion
+          //o no, y si no ver que poner en el set_scale
+          scale.set_scale(2280.f);
+          pTxCharacteristic->setValue("Sincronizacion realizada");
+          pTxCharacteristic->notify();
+          break;
+        default;
       }
     }
 };
