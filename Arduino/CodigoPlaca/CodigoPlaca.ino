@@ -30,30 +30,33 @@ class MyServerCallbacks: public BLEServerCallbacks {
     }
 };
 
+void envioMensaje(std::string msg){
+  pTxCharacteristic->setValue(msg);
+  pTxCharacteristic->notify();
+}
 
-//Esta clase ha que modificarla para que cuando reciba cierto caracter
-//haga la tara y lo de la sincronizacion
 class MyCallbacks: public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
       std::string rxValue = pCharacteristic->getValue();
-      if(rxValue.size() == 1){
         switch(rxValue.at(0)){
           case 't':
-            scale.tare();
-            pTxCharacteristic->setValue("Tara realizada");
-            pTxCharacteristic->notify();
+            scale.read();
+            scale.read_average(20);
+            scale.get_value(5);
+            scale.get_units(5);	
+            scale.set_scale(2280.f);
+            scale.tare();			
+            envioMensaje("Tara realizada");
             break;
           case 's':
             //hay que ver si se le envia una variable para para la calibracion
             //o no, y si no ver que poner en el set_scale
             scale.set_scale(2280.f);
-            pTxCharacteristic->setValue("Sincronizacion realizada");
-            pTxCharacteristic->notify();
+            envioMensaje("Sincronizacion realizada");
             break;
           default:
           break;
         }
-      }
     }
 };
 
@@ -89,71 +92,59 @@ void BLEInit(){
   // Start advertising
   pServer->getAdvertising()->start();
 }
-void envioMensaje(std::string msg){
-  pTxCharacteristic->setValue(msg);
-  pTxCharacteristic->notify();
-}
+
 void ADCInit(){
   scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
 
   envioMensaje("Antes de la escala");
-  envioMensaje("Lectura: \t\t");
+  envioMensaje("Lectura:");
   envioMensaje(String(scale.read()).c_str());	// print a raw reading from the ADC
 
-  envioMensaje("Lectura media: \t\t");
+  envioMensaje("Lectura media:");
   envioMensaje(String(scale.read_average(20)).c_str());  	// print the average of 20 readings from the ADC
 
-  envioMensaje("Toma valor: \t\t");
+  envioMensaje("Toma valor:");
   envioMensaje(String(scale.get_value(5)).c_str());		// print the average of 5 readings from the ADC minus the tare weight (not set yet)
 
-  Serial.print("Toma unidades: \t\t");
-  Serial.println(scale.get_units(5), 1);	// print the average of 5 readings from the ADC minus tare weight (not set) divided
+  envioMensaje("Toma unidades:");
+  envioMensaje(String(scale.get_units(5)).c_str());	// print the average of 5 readings from the ADC minus tare weight (not set) divided
 						// by the SCALE parameter (not set yet)
 
   scale.set_scale(2280.f);                      // this value is obtained by calibrating the scale with known weights; see the README for details
   scale.tare();				        // reset the scale to 0
 
-  Serial.println("After setting up the scale:");
+  envioMensaje("Despues de la escala");
 
-  Serial.print("read: \t\t");
-  Serial.println(scale.read());                 // print a raw reading from the ADC
+  envioMensaje("Lectura:");
+  envioMensaje(String(scale.read()).c_str());                 // print a raw reading from the ADC
 
-  Serial.print("read average: \t\t");
-  Serial.println(scale.read_average(20));       // print the average of 20 readings from the ADC
+  envioMensaje("Lectura media:");
+  envioMensaje(String(scale.read_average(20)).c_str());       // print the average of 20 readings from the ADC
 
-  Serial.print("get value: \t\t");
-  Serial.println(scale.get_value(5));		// print the average of 5 readings from the ADC minus the tare weight, set with tare()
+  envioMensaje("Toma valor:");
+  envioMensaje(String(scale.get_value(5)).c_str());		// print the average of 5 readings from the ADC minus the tare weight, set with tare()
 
-  Serial.print("get units: \t\t");
-  Serial.println(scale.get_units(5), 1);        // print the average of 5 readings from the ADC minus tare weight, divided
+  envioMensaje("Toma unidades:");
+  envioMensaje(String(scale.get_units(5)).c_str());        // print the average of 5 readings from the ADC minus tare weight, divided
 						// by the SCALE parameter set with set_scale
 
-  Serial.println("Readings:");
+  envioMensaje("Readings:");
 }
 void setup() {
-  Serial.begin(115200);
-
-  
-  
- 
-
+  //Serial.begin(115200);
+  BLEInit();
+  ADCInit();
 }
 
 void loop() {
   if (deviceConnected) {
-    Serial.print("one reading:\t");
+    envioMensaje("Una lectura:");
     txValue = String(scale.get_units(), 3);
-    Serial.print(txValue);
-    pTxCharacteristic->setValue(txValue.c_str());
-    pTxCharacteristic->notify();
+    envioMensaje(txValue.c_str());
 
-
-
-    Serial.print("\t| average:\t");
+    envioMensaje("Media:");
     txValue = String(scale.get_units(10), 3);
-    Serial.println(txValue);
-    pTxCharacteristic->setValue(txValue.c_str());
-    pTxCharacteristic->notify();
+    envioMensaje(txValue.c_str());
 
     scale.power_down();			        // put the ADC in sleep mode
     delay(5000);
@@ -166,7 +157,7 @@ void loop() {
   if (!deviceConnected && oldDeviceConnected) {
     delay(500); // give the bluetooth stack the chance to get things ready
     pServer->startAdvertising(); // restart advertising
-    Serial.println("start advertising");
+    //Serial.println("start advertising");
     oldDeviceConnected = deviceConnected;
   }
   // connecting
