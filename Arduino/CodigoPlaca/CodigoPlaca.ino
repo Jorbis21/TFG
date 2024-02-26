@@ -35,29 +35,29 @@ class MyServerCallbacks: public BLEServerCallbacks {
 //haga la tara y lo de la sincronizacion
 class MyCallbacks: public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
-      char rxValue = pCharacteristic->getValue();
-      Switch(){
-        case 't':
-          scale.tare();
-          pTxCharacteristic->setValue("Tara realizada");
-          pTxCharacteristic->notify();
+      std::string rxValue = pCharacteristic->getValue();
+      if(rxValue.size() == 1){
+        switch(rxValue.at(0)){
+          case 't':
+            scale.tare();
+            pTxCharacteristic->setValue("Tara realizada");
+            pTxCharacteristic->notify();
+            break;
+          case 's':
+            //hay que ver si se le envia una variable para para la calibracion
+            //o no, y si no ver que poner en el set_scale
+            scale.set_scale(2280.f);
+            pTxCharacteristic->setValue("Sincronizacion realizada");
+            pTxCharacteristic->notify();
+            break;
+          default:
           break;
-        case 's':
-          //hay que ver si se le envia una variable para para la calibracion
-          //o no, y si no ver que poner en el set_scale
-          scale.set_scale(2280.f);
-          pTxCharacteristic->setValue("Sincronizacion realizada");
-          pTxCharacteristic->notify();
-          break;
-        default;
+        }
       }
     }
 };
 
-
-void setup() {
-  Serial.begin(115200);
-
+void BLEInit(){
   // Create the BLE Device
   BLEDevice::init("Medidor de Potencia");
 
@@ -88,21 +88,25 @@ void setup() {
 
   // Start advertising
   pServer->getAdvertising()->start();
-  Serial.println("Waiting a client connection to notify...");
-  
+}
+void envioMensaje(std::string msg){
+  pTxCharacteristic->setValue(msg);
+  pTxCharacteristic->notify();
+}
+void ADCInit(){
   scale.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
 
-  Serial.println("Before setting up the scale:");
-  Serial.print("read: \t\t");
-  Serial.println(scale.read());			// print a raw reading from the ADC
+  envioMensaje("Antes de la escala");
+  envioMensaje("Lectura: \t\t");
+  envioMensaje(String(scale.read()).c_str());	// print a raw reading from the ADC
 
-  Serial.print("read average: \t\t");
-  Serial.println(scale.read_average(20));  	// print the average of 20 readings from the ADC
+  envioMensaje("Lectura media: \t\t");
+  envioMensaje(String(scale.read_average(20)).c_str());  	// print the average of 20 readings from the ADC
 
-  Serial.print("get value: \t\t");
-  Serial.println(scale.get_value(5));		// print the average of 5 readings from the ADC minus the tare weight (not set yet)
+  envioMensaje("Toma valor: \t\t");
+  envioMensaje(String(scale.get_value(5)).c_str());		// print the average of 5 readings from the ADC minus the tare weight (not set yet)
 
-  Serial.print("get units: \t\t");
+  Serial.print("Toma unidades: \t\t");
   Serial.println(scale.get_units(5), 1);	// print the average of 5 readings from the ADC minus tare weight (not set) divided
 						// by the SCALE parameter (not set yet)
 
@@ -125,6 +129,13 @@ void setup() {
 						// by the SCALE parameter set with set_scale
 
   Serial.println("Readings:");
+}
+void setup() {
+  Serial.begin(115200);
+
+  
+  
+ 
 
 }
 
