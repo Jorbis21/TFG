@@ -38,14 +38,27 @@ GND -> GND (PIN 14)
 
 Para el desarrollo del software que usa la placa, vamos a usar dos ejemplos que vienen en arduino, el de BLE_uart de los ejemplos de ESP32, y el ejemplo de la librería de Bogdan Necula para el conversor analogico digital Hx711.
 
-Instalación Kicad
+*Desarrollar como hemos buscado los componentes*
 
+Para componentes
+	https://jlcpcb.com/
+	Que es de donde vamos a comprar el chip
+	https://www.mouser.es/ (Para buscar componentes de manera mas cómoda)
+
+Para el procesador
+	https://github.com/espressif/kicad-libraries?tab=readme-ov-file
+
+Kicad
 * [ ] Buscar un micro y la documentación:
 	* Schematic (Lógico)
 	* Footprint (Físico)
-* [ ] Regulacion de tension 5v-3,3
-* [ ] Conectar USB
+* [ ] Regulacion de tension 5v-3,3 (LDO) RT9080
+* [ ] Conectar USB (Tipo C para USB 2.0)
 * [ ] Pines extra GPIOs
 	* [ ] HX717
 	* [ ] Botones
 	* [ ] Leds
+
+GPIO 2,8,9 peligro porque son para modos de boot
+Mirar esp32-C3FN4 datasheet
+
