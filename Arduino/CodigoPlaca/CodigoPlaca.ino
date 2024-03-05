@@ -4,6 +4,9 @@
 #include <BLEUtils.h>
 #include <BLE2902.h>
 
+//Timer
+hw_timer_t * timer = NULL;
+
 //HX711 definitions
 const int LOADCELL_DOUT_PIN = 2;
 const int LOADCELL_SCK_PIN = 3;
@@ -14,7 +17,7 @@ BLEServer *pServer = NULL;
 BLECharacteristic * pTxCharacteristic;
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
-String txValue;//this is the data send
+String msg;
 
 #define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E" // UART service UUID
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
@@ -131,33 +134,30 @@ void ADCInit(){
   envioMensaje("Readings:");
 }
 void setup() {
-  //Serial.begin(115200);
+  timer = timerBegin(0, 80, true);
   BLEInit();
   ADCInit();
 }
 
 void loop() {
   if (deviceConnected) {
-    envioMensaje("Una lectura:");
-    txValue = String(scale.get_units(), 3);
-    envioMensaje(txValue.c_str());
+    scale.power_up();
+    msg = "Una lectura: ";
+    msg.concat(String(scale.get_units(), 3));
+    envioMensaje(msg.c_str());
+    msg = "Tiempo: ";
+    msg.concat(String(millis() / 1000));
+    envioMensaje(msg.c_str());
 
-    envioMensaje("Media:");
-    txValue = String(scale.get_units(10), 3);
-    envioMensaje(txValue.c_str());
 
     scale.power_down();			        // put the ADC in sleep mode
-    delay(5000);
-    scale.power_up();
-
-		delay(1000); // bluetooth stack will go into congestion, if too many packets are sent
+    delay(1000);
 	}
 
     // disconnecting
   if (!deviceConnected && oldDeviceConnected) {
     delay(500); // give the bluetooth stack the chance to get things ready
     pServer->startAdvertising(); // restart advertising
-    //Serial.println("start advertising");
     oldDeviceConnected = deviceConnected;
   }
   // connecting
