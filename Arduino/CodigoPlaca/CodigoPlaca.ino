@@ -43,11 +43,6 @@ class MyCallbacks: public BLECharacteristicCallbacks {
       std::string rxValue = pCharacteristic->getValue();
         switch(rxValue.at(0)){
           case 't':
-            scale.read();
-            scale.read_average(20);
-            scale.get_value(5);
-            scale.get_units(5);	
-            scale.set_scale(2280.f);
             scale.tare();			
             envioMensaje("Tara realizada");
             break;
@@ -141,17 +136,13 @@ void setup() {
 
 void loop() {
   if (deviceConnected) {
-    scale.power_up();
+    while(!scale.is_ready());
     msg = "Una lectura: ";
     msg.concat(String(scale.get_units(), 3));
     envioMensaje(msg.c_str());
     msg = "Tiempo: ";
     msg.concat(String(millis() / 1000));
     envioMensaje(msg.c_str());
-
-
-    scale.power_down();			        // put the ADC in sleep mode
-    delay(1000);
 	}
 
     // disconnecting
