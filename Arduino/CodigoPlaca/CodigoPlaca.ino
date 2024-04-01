@@ -1,8 +1,14 @@
 #include "HX711.h"
+#include <Preferences.h>
+//#include <nvs_flash.h>
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
+
+//Flash
+Preferences escala;
+double scale_val = 2280.f;
 
 //Timer
 hw_timer_t * timer = NULL;
@@ -47,9 +53,7 @@ class MyCallbacks: public BLECharacteristicCallbacks {
             envioMensaje("Tara realizada");
             break;
           case 's':
-            //hay que ver si se le envia una variable para para la calibracion
-            //o no, y si no ver que poner en el set_scale
-            scale.set_scale(2280.f);
+            scale.set_scale(escala.getDouble("scale", NAN));
             envioMensaje("Sincronizacion realizada");
             break;
           default:
@@ -108,7 +112,7 @@ void ADCInit(){
   envioMensaje(String(scale.get_units(5)).c_str());	// print the average of 5 readings from the ADC minus tare weight (not set) divided
 						// by the SCALE parameter (not set yet)
 
-  scale.set_scale(2280.f);                      // this value is obtained by calibrating the scale with known weights; see the README for details
+  scale.set_scale(scale_val);                      // this value is obtained by calibrating the scale with known weights; see the README for details
   scale.tare();				        // reset the scale to 0
 
   envioMensaje("Despues de la escala");
@@ -129,9 +133,12 @@ void ADCInit(){
   envioMensaje("Readings:");
 }
 void setup() {
+  escala.begin("MedPot", true);
+  scale_val = escala.getDouble("scale", NAN);
   timer = timerBegin(0, 80, true);
   BLEInit();
   ADCInit();
+
 }
 
 void loop() {
