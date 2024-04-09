@@ -7,7 +7,7 @@ void setup() {
 
   preferences.begin("MedPot", false);
 
-  double sync = 20.f;
+  double sync = 48650.f;
 
   preferences.putDouble("scale", sync);
 
