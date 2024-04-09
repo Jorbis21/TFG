@@ -38,6 +38,8 @@ GND -> GND (PIN 14)
 
 Para el desarrollo del software que usa la placa, vamos a usar dos ejemplos que vienen en arduino, el de BLE_uart de los ejemplos de ESP32, y el ejemplo de la librería de Bogdan Necula para el conversor analogico digital Hx711.
 
+https://randomnerdtutorials.com/esp32-save-data-permanently-preferences/
+
 *Desarrollar como hemos buscado los componentes*
 
 Para componentes
@@ -49,15 +51,26 @@ Para el procesador
 	https://github.com/espressif/kicad-libraries?tab=readme-ov-file
 
 Kicad
-* [ ] Buscar un micro y la documentación:
-	* Schematic (Lógico)
-	* Footprint (Físico)
-* [ ] Regulacion de tension 5v-3,3 (LDO) RT9080
-* [ ] Conectar USB (Tipo C para USB 2.0)
-* [ ] Pines extra GPIOs
-	* [ ] HX717
-	* [ ] Botones
-	* [ ] Leds
+- [x] ESP32C3-Mini-1-4N
+	https://jlcpcb.com/partdetail/EspressifSystems-ESP32_C3_MINI_1N4/C2838502
+- [x] USB-C (connector)
+	https://jlcpcb.com/partdetail/ShouHan-TYPE_C_16PIN_2MD_073/C2765186
+- [x] Protección ESD (A la salida del USB) 
+	https://jlcpcb.com/partdetail/TechPublic-USBLC62P6/C2827693
+- [x] Regulador (RT9080) 
+	https://jlcpcb.com/partdetail/RichtekTech-RT908033GJ5/C841192
+- [ ] HX717 
+	https://jlcpcb.com/partdetail/Avia_Semicon_xiamen-HX717/C575394
+- [ ] LED(s)  
+- [ ] Switch(es)  
+- [ ] Resistencias  
+- [ ] Condensadores  
+- [ ] Jumper (no pedir soldados)  
+- [ ] Conexiones externas (Para la barra/algún GPIO extra/3V3/GND).  
+- [ ] Potencial configuración de los pines de strapping. (Depende de la datasheet del esp32) 
+- [ ] Entrada de 5V externa (aparte del USB).  
+- [ ] Poner testpoints  
+- [ ] Silkscreen
 
 GPIO 2,8,9 peligro porque son para modos de boot
 Mirar esp32-C3FN4 datasheet

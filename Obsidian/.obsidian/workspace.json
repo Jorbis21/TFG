@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "edb68bd2d6be7e9f",
+        "id": "9267a279a353ac01",
         "type": "tabs",
         "children": [
           {
-            "id": "ba9e165825d7fdec",
+            "id": "54254f908c6dedbe",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -146,13 +146,13 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "ba9e165825d7fdec",
+  "active": "54254f908c6dedbe",
   "lastOpenFiles": [
-    "esp32-c3_technical_reference_manual_en.pdf",
-    "esp32-c3_datasheet_en.pdf",
-    "esp-c3-32s-kit-v1.0_specification.pdf",
-    "Memoria.md",
     "Pasted image 20240130220222.png",
+    "Memoria.md",
+    "esp-c3-32s-kit-v1.0_specification.pdf",
+    "esp32-c3_datasheet_en.pdf",
+    "esp32-c3_technical_reference_manual_en.pdf",
     "hx711F_EN.pdf"
   ]
 }
