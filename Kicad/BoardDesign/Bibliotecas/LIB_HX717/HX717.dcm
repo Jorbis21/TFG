@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP HX717
+D SOP-16  Analog To Digital Converters (ADCs) ROHS
+K
+F https://4donline.ihs.com/images/VipMasterIC/IC/AVIA/AVIA-S-A0017459020/AVIA-S-A0017459020-1.pdf?hkey=EF798316E3902B6ED9A73243A3159BB0
+$ENDCMP
+#
+#End Doc Library
