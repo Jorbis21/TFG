@@ -3722,6 +3722,231 @@
 				)
 			)
 		)
+		(symbol "RT9080-33GJ5:RT9080-33GJ5"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "IC"
+				(at 24.13 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "RT9080-33GJ5"
+				(at 24.13 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "SOT94P280X100-5N"
+				(at 24.13 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.richtek.com/assets/product_file/RT9080/DS9080-05.pdf"
+				(at 24.13 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "IC REG LIN 3.3V 600MA TSOT23-5"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "1"
+				(at 24.13 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "RICHTEK"
+				(at 24.13 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "RT9080-33GJ5"
+				(at 24.13 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "835-RT9080-33GJ5"
+				(at 24.13 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Richtek/RT9080-33GJ5?qs=amGC7iS6iy9hJG6yuLjyPQ%3D%3D"
+				(at 24.13 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" ""
+				(at 24.13 -894.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" ""
+				(at 24.13 -994.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "RT9080-33GJ5_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 22.86 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 27.94 0 180)
+					(length 5.08)
+					(name "SNS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 27.94 -2.54 180)
+					(length 5.08)
+					(name "VOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Switch:SW_SPST"
 			(pin_names
 				(offset 0) hide)
@@ -3851,238 +4076,6 @@
 								(size 1.27 1.27)
 							)
 						)
-					)
-				)
-			)
-		)
-		(symbol "esp:RT9080-33GJ5"
-			(pin_names
-				(offset 0.762)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "IC"
-				(at 24.13 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "RT9080-33GJ5"
-				(at 24.13 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "SOT94P280X100-5N"
-				(at 24.13 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.richtek.com/assets/product_file/RT9080/DS9080-05.pdf"
-				(at 24.13 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "IC REG LIN 3.3V 600MA TSOT23-5"
-				(at 24.13 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Height" "1"
-				(at 24.13 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "RICHTEK"
-				(at 24.13 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "RT9080-33GJ5"
-				(at 24.13 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "835-RT9080-33GJ5"
-				(at 24.13 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Richtek/RT9080-33GJ5?qs=amGC7iS6iy9hJG6yuLjyPQ%3D%3D"
-				(at 24.13 -15.24 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Arrow Part Number" ""
-				(at 24.13 -17.78 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Arrow Price/Stock" ""
-				(at 24.13 -20.32 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(symbol "RT9080-33GJ5_0_0"
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 0)
-					(length 5.08)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 0)
-					(length 5.08)
-					(name "EN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 27.94 0 180)
-					(length 5.08)
-					(name "SNS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 27.94 -2.54 180)
-					(length 5.08)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "RT9080-33GJ5_0_1"
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 22.86 2.54) (xy 22.86 -7.62) (xy 5.08 -7.62) (xy 5.08 2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type solid)
-					)
-					(fill
-						(type none)
 					)
 				)
 			)
@@ -4788,16 +4781,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 39.37) (xy 171.45 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "18493333-058b-4fd7-8a4f-efdbcb2c2220")
-	)
-	(wire
-		(pts
 			(xy 54.61 53.34) (xy 54.61 40.64)
 		)
 		(stroke
@@ -4805,16 +4788,6 @@
 			(type default)
 		)
 		(uuid "19b20e28-0ae1-4ef3-8653-c8779da8c66b")
-	)
-	(wire
-		(pts
-			(xy 160.02 41.91) (xy 160.02 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1a78e007-bc7a-4fd3-a9db-dd2f6fa6a51c")
 	)
 	(wire
 		(pts
@@ -5165,16 +5138,6 @@
 			(type default)
 		)
 		(uuid "4b23e0b7-db0a-43db-a6c6-5a8a462221b0")
-	)
-	(wire
-		(pts
-			(xy 214.63 93.98) (xy 214.63 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f9225f7-ce7d-4b09-8206-48bc9d96dd24")
 	)
 	(wire
 		(pts
@@ -5538,16 +5501,6 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 41.91) (xy 171.45 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "97b5b587-0d10-4666-ae7e-cb096973ad78")
-	)
-	(wire
-		(pts
 			(xy 35.56 157.48) (xy 35.56 148.59)
 		)
 		(stroke
@@ -5585,16 +5538,6 @@
 			(type default)
 		)
 		(uuid "9b981a8b-62db-4e30-bad6-2b0294d844cd")
-	)
-	(wire
-		(pts
-			(xy 160.02 41.91) (xy 161.29 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9d30a629-36d8-4271-959a-9354aac3ff4a")
 	)
 	(wire
 		(pts
@@ -5718,7 +5661,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 38.1) (xy 158.75 38.1)
+			(xy 158.75 38.1) (xy 161.29 38.1)
 		)
 		(stroke
 			(width 0)
@@ -6038,7 +5981,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 41.91) (xy 168.91 41.91)
+			(xy 168.91 38.1) (xy 172.72 38.1)
 		)
 		(stroke
 			(width 0)
@@ -6076,25 +6019,15 @@
 		)
 		(uuid "fe8b3a9b-2424-4611-834a-50f8e60b3a30")
 	)
-	(text "Pasar test ERC"
+	(text "De la datasheet\ncon sns desconectado\nvout da 3,3v"
 		(exclude_from_sim no)
-		(at 207.772 43.942 0)
+		(at 113.792 46.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "23c7860d-3c2c-4ce1-a05f-74318e93d8f3")
-	)
-	(text "Revisar pulldowns a 5.1k"
-		(exclude_from_sim no)
-		(at 58.928 96.266 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "499bd629-3b81-4052-848f-382fad222800")
+		(uuid "2c32ecde-408b-4a27-83db-5bad8bfcc5df")
 	)
 	(text "Del ejemplo de datasheet"
 		(exclude_from_sim no)
@@ -6108,7 +6041,7 @@
 	)
 	(text "Poner a la salida del RT9080 >= 1uF"
 		(exclude_from_sim no)
-		(at 115.57 20.32 0)
+		(at 116.332 18.542 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6116,17 +6049,7 @@
 		)
 		(uuid "79cc6894-4d38-430b-9546-6b45654e7d83")
 	)
-	(text "Revisar valores iniciales en datasheet"
-		(exclude_from_sim no)
-		(at 187.706 144.526 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "a57abec6-aaec-4132-aa5a-5c4694aa70f4")
-	)
-	(text "Dos resistencias de 56k a tierra en los pines de cc\ny vconn conectadas a tierra"
+	(text "Dos resistencias de 5k1 a tierra en los pines de cc\ny vconn conectadas a tierra"
 		(exclude_from_sim no)
 		(at 39.624 30.226 0)
 		(effects
@@ -6138,7 +6061,7 @@
 	)
 	(text "desconectados los sdbus\n"
 		(exclude_from_sim no)
-		(at 38.862 88.646 0)
+		(at 41.402 87.884 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6791,6 +6714,155 @@
 		)
 	)
 	(symbol
+		(lib_id "RT9080-33GJ5:RT9080-33GJ5")
+		(at 100.33 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0570e9ca-879b-4f78-b709-8657ed15cce0")
+		(property "Reference" "IC2"
+			(at 114.3 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "RT9080-33GJ5"
+			(at 114.3 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SOT94P280X100-5N"
+			(at 124.46 130.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.richtek.com/assets/product_file/RT9080/DS9080-05.pdf"
+			(at 124.46 230.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "IC REG LIN 3.3V 600MA TSOT23-5"
+			(at 100.33 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "1"
+			(at 124.46 430.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "RICHTEK"
+			(at 124.46 530.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "RT9080-33GJ5"
+			(at 124.46 630.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "835-RT9080-33GJ5"
+			(at 124.46 730.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Richtek/RT9080-33GJ5?qs=amGC7iS6iy9hJG6yuLjyPQ%3D%3D"
+			(at 124.46 830.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 124.46 930.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 124.46 1030.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7812a059-3767-47a3-b49c-9e47c7c52219")
+		)
+		(pin "4"
+			(uuid "bf597d28-5f06-4cd8-88ea-4b00e7d72ba4")
+		)
+		(pin "5"
+			(uuid "5c038065-fe60-471d-a077-cb28a1f18104")
+		)
+		(pin "2"
+			(uuid "f65e69bd-51fa-4f99-8b19-7a6594681494")
+		)
+		(pin "3"
+			(uuid "f178fbc5-3232-4dd0-982c-b5b17b677658")
+		)
+		(instances
+			(project "BoardDesign"
+				(path "/aac93b80-4efe-474a-b9ef-fac699bb04b8"
+					(reference "IC2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3V3")
 		(at 257.81 137.16 0)
 		(unit 1)
@@ -6858,7 +6930,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 165.1 41.91 180)
+		(at 165.1 38.1 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6866,7 +6938,7 @@
 		(dnp no)
 		(uuid "085200e6-59e7-4fb8-8c65-8a0d4961dc24")
 		(property "Reference" "D1"
-			(at 166.6875 34.29 0)
+			(at 166.6875 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6874,7 +6946,7 @@
 			)
 		)
 		(property "Value" "LED"
-			(at 166.6875 36.83 0)
+			(at 166.6875 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6882,7 +6954,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 165.1 41.91 0)
+			(at 165.1 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6891,7 +6963,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 165.1 41.91 0)
+			(at 165.1 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6900,7 +6972,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 165.1 41.91 0)
+			(at 165.1 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8141,7 +8213,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 177.8 39.37 0)
+		(at 172.72 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8150,7 +8222,7 @@
 		(fields_autoplaced yes)
 		(uuid "56483a62-080c-446f-a92e-3e7447eb429b")
 		(property "Reference" "#PWR014"
-			(at 177.8 45.72 0)
+			(at 172.72 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8159,7 +8231,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 177.8 44.45 0)
+			(at 172.72 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8167,7 +8239,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 177.8 39.37 0)
+			(at 172.72 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8176,7 +8248,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 177.8 39.37 0)
+			(at 172.72 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8185,7 +8257,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 177.8 39.37 0)
+			(at 172.72 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9819,156 +9891,6 @@
 		)
 	)
 	(symbol
-		(lib_id "esp:RT9080-33GJ5")
-		(at 100.33 35.56 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ccce9eb2-1538-41ca-a545-b2e8f634fd40")
-		(property "Reference" "IC2"
-			(at 114.3 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "RT9080-33GJ5"
-			(at 114.3 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "SOT94P280X100-5N"
-			(at 124.46 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.richtek.com/assets/product_file/RT9080/DS9080-05.pdf"
-			(at 124.46 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Description" "IC REG LIN 3.3V 600MA TSOT23-5"
-			(at 124.46 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Height" "1"
-			(at 124.46 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "RICHTEK"
-			(at 124.46 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "RT9080-33GJ5"
-			(at 124.46 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "835-RT9080-33GJ5"
-			(at 124.46 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Richtek/RT9080-33GJ5?qs=amGC7iS6iy9hJG6yuLjyPQ%3D%3D"
-			(at 124.46 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 124.46 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 124.46 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "7227ca84-f609-4604-9480-2b6d3b80b7e0")
-		)
-		(pin "3"
-			(uuid "fb8397ac-813b-4460-83f5-4946de1ffd95")
-		)
-		(pin "2"
-			(uuid "81ff1667-80b2-4128-874c-22405418e030")
-		)
-		(pin "5"
-			(uuid "83c193cf-ff89-42b9-8cd5-af9d04089d75")
-		)
-		(pin "1"
-			(uuid "a107b7e8-c31d-4699-b84c-8ec11f17d25a")
-		)
-		(instances
-			(project "BoardDesign"
-				(path "/aac93b80-4efe-474a-b9ef-fac699bb04b8"
-					(reference "IC2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 120.65 166.37 0)
 		(unit 1)
@@ -10522,7 +10444,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 100.33 25.4 270)
+		(at 100.33 25.4 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10531,7 +10453,7 @@
 		(fields_autoplaced yes)
 		(uuid "e8cff030-c1d5-4ef0-8eb7-62c9c52cce61")
 		(property "Reference" "TP2"
-			(at 105.41 24.1299 90)
+			(at 102.87 20.8279 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10540,7 +10462,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 105.41 26.6699 90)
+			(at 102.87 23.3679 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10549,7 +10471,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 100.33 30.48 0)
+			(at 105.41 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10558,7 +10480,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 100.33 30.48 0)
+			(at 105.41 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
