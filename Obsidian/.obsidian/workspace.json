@@ -11,11 +11,9 @@
             "id": "54254f908c6dedbe",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Memoria.md",
-                "mode": "source",
-                "source": false
+                "file": "esp32-c3_technical_reference_manual_en.pdf"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Memoria.md",
+                "file": "esp32-c3_technical_reference_manual_en.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Memoria.md",
+                "file": "esp32-c3_technical_reference_manual_en.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Memoria.md"
+                "file": "esp32-c3_technical_reference_manual_en.pdf"
               }
             }
           }
@@ -148,8 +146,8 @@
   },
   "active": "54254f908c6dedbe",
   "lastOpenFiles": [
-    "Pasted image 20240130220222.png",
     "Memoria.md",
+    "Pasted image 20240130220222.png",
     "esp-c3-32s-kit-v1.0_specification.pdf",
     "esp32-c3_datasheet_en.pdf",
     "esp32-c3_technical_reference_manual_en.pdf",
