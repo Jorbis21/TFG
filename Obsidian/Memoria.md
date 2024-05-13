@@ -59,7 +59,7 @@ Kicad
 	https://jlcpcb.com/partdetail/TechPublic-USBLC62P6/C2827693
 - [x] Regulador (RT9080) 
 	https://jlcpcb.com/partdetail/RichtekTech-RT908033GJ5/C841192
-- [ ] HX717 
+- [x] HX717 
 	https://jlcpcb.com/partdetail/Avia_Semicon_xiamen-HX717/C575394
 - [ ] LED(s)  
 - [ ] Switch(es)  
