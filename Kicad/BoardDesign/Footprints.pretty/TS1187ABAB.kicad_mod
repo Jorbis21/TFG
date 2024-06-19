@@ -17,7 +17,7 @@
 		)
 	)
 	(property "Value" "TS1187ABAB"
-		(at -0.5 0 0)
+		(at 0 0 0)
 		(layer "F.SilkS")
 		(hide yes)
 		(uuid "fc625d32-3bf0-4448-9468-a6b9cf586a97")
@@ -37,6 +37,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -49,6 +50,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -61,6 +63,7 @@
 		(effects
 			(font
 				(size 1.27 1.27)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -248,17 +251,6 @@
 		(layer "F.Fab")
 		(uuid "8f75450d-b6b4-4871-a898-89c76020a847")
 	)
-	(fp_text user "${REFERENCE}"
-		(at -0.5 0 0)
-		(layer "F.Fab")
-		(uuid "28409e6c-4051-4efc-81e8-c0cf0673d354")
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.254)
-			)
-		)
-	)
 	(pad "1" smd rect
 		(at -3 -1.875 90)
 		(size 0.75 1)
@@ -284,8 +276,20 @@
 		(uuid "5900bdea-faa5-4f8e-8f95-3fd157b8505f")
 	)
 	(model "TS-1187A-B-A-B.stp"
+		(hide yes)
 		(offset
 			(xyz 0.04999999999 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 -90)
+		)
+	)
+	(model "${KIPRJMOD}/Bibliotecas/LIB_TS-1187A-B-A-B/TS-1187A-B-A-B/3D/TS-1187A-B-A-B.stp"
+		(offset
+			(xyz 0 0 0)
 		)
 		(scale
 			(xyz 1 1 1)
