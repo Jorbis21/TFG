@@ -11,9 +11,11 @@
             "id": "54254f908c6dedbe",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "esp32-c3_technical_reference_manual_en.pdf"
+                "file": "Memoria.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "esp32-c3_technical_reference_manual_en.pdf",
+                "file": "Memoria.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "esp32-c3_technical_reference_manual_en.pdf",
+                "file": "Memoria.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "esp32-c3_technical_reference_manual_en.pdf"
+                "file": "Memoria.md"
               }
             }
           }
@@ -146,11 +148,11 @@
   },
   "active": "54254f908c6dedbe",
   "lastOpenFiles": [
+    "esp32-c3_technical_reference_manual_en.pdf",
     "Memoria.md",
     "Pasted image 20240130220222.png",
     "esp-c3-32s-kit-v1.0_specification.pdf",
     "esp32-c3_datasheet_en.pdf",
-    "esp32-c3_technical_reference_manual_en.pdf",
     "hx711F_EN.pdf"
   ]
 }
