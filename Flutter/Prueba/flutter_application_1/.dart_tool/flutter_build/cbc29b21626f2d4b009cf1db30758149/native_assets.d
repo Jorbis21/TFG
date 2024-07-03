@@ -1,0 +1,1 @@
+ /home/jorbis/Documentos/flutter/sd/flutter_reactive_ble_uart_example/.dart_tool/flutter_build/cbc29b21626f2d4b009cf1db30758149/native_assets.yaml: 
