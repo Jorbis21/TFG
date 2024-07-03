@@ -75,3 +75,4 @@ Kicad
 GPIO 2,8,9 peligro porque son para modos de boot
 Mirar esp32-C3FN4 datasheet
 
+![[Pasted image 20240624133946.png]]

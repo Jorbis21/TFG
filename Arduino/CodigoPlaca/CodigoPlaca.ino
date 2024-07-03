@@ -14,8 +14,8 @@ double scale_val = 2280.f;
 hw_timer_t * timer = NULL;
 
 //HX711 definitions
-const int LOADCELL_DOUT_PIN = 2;
-const int LOADCELL_SCK_PIN = 3;
+const int LOADCELL_DOUT_PIN = 6;//2
+const int LOADCELL_SCK_PIN = 7;//3
 HX711 scale;
 
 //BLE Service definitions

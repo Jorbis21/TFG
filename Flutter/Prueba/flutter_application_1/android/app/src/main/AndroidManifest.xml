@@ -1,8 +1,18 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nl.wolffonline.uart_ble">
+    <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permision android:name="android.permission.BLUETOOTH_SCAN" 
+                        android:usesPermissionFlags="neverForLocation"/>
+        <uses-permision android:name="android.permission.BLUETOOTH_CONNECT"/>
+        <uses-permision android:name="android.permission.ACCESS_FINE_LOCATION"
+                        android:maxSdkVersion="30"/>
+        <uses-permision android:name="android.permission.ACCESS_COARSE_LOCATION"
+                        android:maxSdkVersion="30"/>
     <application
         android:label="flutter_application_1"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"
