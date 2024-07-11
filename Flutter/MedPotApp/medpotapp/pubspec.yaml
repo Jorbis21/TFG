@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.4 <4.0.0'
+  sdk: '>=3.4.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   flutter_reactive_ble: ^5.3.1
   permission_handler: ^11.3.1
+  kotlin_flavor: ^0.2.0
 
 dev_dependencies:
   flutter_test:
