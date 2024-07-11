@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 3, 32, 128)),
         useMaterial3: true,
       ),
-      home: HomePage(title: 'Medidor de Potencia',)
+      home: HomePage(title: 'Medidor de Potencia')
     );
   }
 }
