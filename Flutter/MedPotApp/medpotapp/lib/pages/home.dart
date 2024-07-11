@@ -96,6 +96,7 @@ class HomePageState extends State<HomePage>{
                 }
                 else{
                   ble.stopScan();
+                  iconPath = 'assets/icons/bluetooth-slash.svg';
                 }
               }
               else{
