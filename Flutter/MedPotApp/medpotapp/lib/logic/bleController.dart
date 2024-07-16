@@ -114,7 +114,6 @@ class BLEController {
         withServices: [UART_UUID, UART_RX, UART_TX],
         prescanDuration: const Duration(seconds: 1));
     connection = currentConnectionStream!.listen((event) {
-      var id = event.deviceId.toString();
       switch (event.connectionState) {
         case DeviceConnectionState.connecting:
           {

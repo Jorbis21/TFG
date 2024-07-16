@@ -36,7 +36,42 @@ class HomePageState extends State<HomePage> {
             ),
             _recieveData()
           ],
-        ));
+        ),
+        bottomNavigationBar: _bottomAppBar(),
+        );
+  }
+
+  BottomAppBar _bottomAppBar() {
+    return BottomAppBar(
+        color: const Color.fromARGB(137, 41, 41, 41),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            IconButton(
+              onPressed: (){
+                ble.sendData('s');
+              }, 
+              icon: const Text(
+                'Sync',
+                style: TextStyle(
+                  color: Colors.white
+                ),
+              )
+            ),
+            IconButton(
+            onPressed: (){
+              ble.sendData('t');
+            }, 
+            icon: const Text(
+              'Tara',
+              style: TextStyle(
+                color: Colors.white
+              ),
+            ))
+          ],
+        ),
+      );
   }
 
   Column _recieveData() {
