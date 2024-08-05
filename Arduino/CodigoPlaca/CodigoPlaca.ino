@@ -144,11 +144,11 @@ void setup() {
 void loop() {
   if (deviceConnected) {
     while(!scale.is_ready());
-    msg = "Una lectura: ";
-    msg.concat(String(scale.get_units(), 3));
-    envioMensaje(msg.c_str());
     msg = "Tiempo: ";
     msg.concat(String(millis() / 1000));
+    envioMensaje(msg.c_str());
+    msg = "Una lectura: ";
+    msg.concat(String(scale.get_units(), 3));
     envioMensaje(msg.c_str());
 	}
 
