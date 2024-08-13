@@ -12,6 +12,9 @@ Uuid UART_UUID = Uuid.parse("6E400001-B5A3-F393-E0A9-E50E24DCCA9E");
 Uuid UART_RX = Uuid.parse("6E400002-B5A3-F393-E0A9-E50E24DCCA9E");
 Uuid UART_TX = Uuid.parse("6E400003-B5A3-F393-E0A9-E50E24DCCA9E");
 
+int tActual = 0;
+double valorActual = 0;
+
 String targetDevice = 'Medidor de Potencia';
 
 class BLEController {
@@ -29,9 +32,11 @@ class BLEController {
   StreamSubscription<DiscoveredDevice>? scanStream;
   Stream<ConnectionStateUpdate>? currentConnectionStream;
   StreamSubscription<ConnectionStateUpdate>? connection;
-  QualifiedCharacteristic? txCharacteristic;
-  QualifiedCharacteristic? rxCharacteristic;
+  QualifiedCharacteristic? _txCharacteristic;
+  QualifiedCharacteristic? _rxCharacteristic;
   Stream<List<int>>? receivedDataStream;
+  Map<int, List<double>> rxData = {};
+  int? currentTime;
   HomePageState? ui;
   bool scanning = false;
   bool connected = false;
@@ -122,24 +127,22 @@ class BLEController {
         case DeviceConnectionState.connected:
           {
             connected = true;
-            txCharacteristic = QualifiedCharacteristic(
+            _txCharacteristic = QualifiedCharacteristic(
                 characteristicId: UART_TX,
                 serviceId: UART_UUID,
                 deviceId: event.deviceId);
-            receivedDataStream =
-                flutterReactiveBle.subscribeToCharacteristic(txCharacteristic!);
-            receivedDataStream!.listen((data) {
-              if (ui == null) {
-                print("UI is null");
-                return;
-              }
-              //print(utf8.decode(data));
-              ui!.updateData(utf8.decode(data));
-            }); /* Falta control de errores */
-            rxCharacteristic = QualifiedCharacteristic(
+            _rxCharacteristic = QualifiedCharacteristic(
                 characteristicId: UART_RX,
                 serviceId: UART_UUID,
                 deviceId: event.deviceId);
+
+            receivedDataStream = flutterReactiveBle
+                .subscribeToCharacteristic(_txCharacteristic!);
+
+            receivedDataStream!.listen((data) {
+              print("Data received: " + utf8.decode(data));
+              onReceiveData(utf8.decode(data));
+            });
             break;
           }
         case DeviceConnectionState.disconnecting:
@@ -178,7 +181,7 @@ class BLEController {
     if (value == null) return;
     if (connected) {
       await flutterReactiveBle
-          .writeCharacteristicWithResponse(rxCharacteristic!, value: [value]);
+          .writeCharacteristicWithResponse(_rxCharacteristic!, value: [value]);
     }
   }
 
@@ -186,8 +189,49 @@ class BLEController {
     if (connected) {
       //avoid sending unwanted data
       await flutterReactiveBle.writeCharacteristicWithResponse(
-          rxCharacteristic!,
+          _rxCharacteristic!,
           value: data.codeUnits);
     }
+  }
+
+  void onReceiveData(String data) {
+    if (decodeData(data)) {
+      ui!.updateData(rxData);
+    }
+  }
+
+  bool decodeData(String data) {
+    /*
+    Formato mensaje:
+    Tiempo: int
+    Una lectura: float
+    */
+
+    if (!data.contains('Una lectura') || !data.contains('Tiempo')) return false;
+
+    List<String> parts = data.split(':');
+    switch (parts[0]) {
+      case 'Tiempo':
+        currentTime = int.parse(parts[1]);
+        break;
+      case 'Una lectura':
+        if (currentTime == 0) return false;
+        rxData.putIfAbsent(currentTime, ifAbsent)
+    }
+    //if (parts.length != 2) return false;
+    int time = parts[1] as int;
+    double measure = parts[1].split(':')[1] as double;
+    if (rxData.containsKey(time)) {
+      rxData[time]!.add(measure);
+    } else {
+      rxData[time] = [measure];
+    }
+
+    /* final media =
+        rxData[tiempo]!.reduce((a, b) => a + b) / rxData[tiempo]!.length;
+    medias.add(media);
+    */
+
+    return true;
   }
 }

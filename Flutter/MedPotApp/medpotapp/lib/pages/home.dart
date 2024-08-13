@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medpotapp/logic/bleController.dart';
@@ -12,7 +13,7 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   bool connect = false;
   String iconPath = 'assets/icons/bluetooth-slash.svg';
-  List<String> rxData = [];
+  Map<int, int> rxData = {};
   List<String> txData = [];
   late BLEController ble;
   int count = 0;
@@ -27,51 +28,46 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 67, 67, 67),
-        appBar: _appBar(),
-        body: ListView(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            _recieveData()
-          ],
-        ),
-        bottomNavigationBar: _bottomAppBar(),
-        );
+      backgroundColor: const Color.fromARGB(255, 67, 67, 67),
+      appBar: _appBar(),
+      body: ListView(
+        children: [
+          const SizedBox(
+            height: 40,
+          ),
+          _recieveData()
+        ],
+      ),
+      bottomNavigationBar: _bottomAppBar(),
+    );
   }
 
   BottomAppBar _bottomAppBar() {
     return BottomAppBar(
-        color: const Color.fromARGB(137, 41, 41, 41),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            IconButton(
-              onPressed: (){
+      color: const Color.fromARGB(137, 41, 41, 41),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          IconButton(
+              onPressed: () {
                 ble.sendData('s');
-              }, 
+              },
               icon: const Text(
                 'Sync',
-                style: TextStyle(
-                  color: Colors.white
-                ),
-              )
-            ),
-            IconButton(
-            onPressed: (){
-              ble.sendData('t');
-            }, 
-            icon: const Text(
-              'Tara',
-              style: TextStyle(
-                color: Colors.white
-              ),
-            ))
-          ],
-        ),
-      );
+                style: TextStyle(color: Colors.white),
+              )),
+          IconButton(
+              onPressed: () {
+                ble.sendData('t');
+              },
+              icon: const Text(
+                'Tara',
+                style: TextStyle(color: Colors.white),
+              ))
+        ],
+      ),
+    );
   }
 
   Column _recieveData() {
@@ -94,7 +90,8 @@ class HomePageState extends State<HomePage> {
                     color: const Color.fromARGB(255, 0, 0, 0), width: 2)),
             height: 90,
             child: Text(
-              rxData.join("\n"),
+              //rxData.join("\n"), TODO
+              rxData.toString(), //TODO
               style: const TextStyle(
                 color: Color.fromARGB(255, 210, 210, 210),
               ),
@@ -151,14 +148,13 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  void updateData(String data) {
+  void updateData(Map<int, List<double>> data) {
     count++;
     if (count > 10) {
       rxData.clear();
-      rxData.add(data);
+      //rxData.add(data);
       count = 0;
-      setState(() {});
+      //setState(() {});
     }
-    print(data);
   }
 }
