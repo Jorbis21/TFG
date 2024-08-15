@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medpotapp/logic/bleController.dart';
@@ -13,8 +12,9 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   bool connect = false;
   String iconPath = 'assets/icons/bluetooth-slash.svg';
-  Map<int, int> rxData = {};
-  List<String> txData = [];
+  String initText = '';
+  String measures = '';
+  String sumUp = '';
   late BLEController ble;
   int count = 0;
 
@@ -35,7 +35,9 @@ class HomePageState extends State<HomePage> {
           const SizedBox(
             height: 40,
           ),
-          _recieveData()
+          _recieveData(),
+          _sumUpData(),
+          _initTextData(),
         ],
       ),
       bottomNavigationBar: _bottomAppBar(),
@@ -82,20 +84,86 @@ class HomePageState extends State<HomePage> {
               fontWeight: FontWeight.bold),
         ),
         Container(
-            margin: const EdgeInsets.all(3.0),
-            width: 1400,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(
-                    color: const Color.fromARGB(255, 0, 0, 0), width: 2)),
-            height: 90,
+          margin: const EdgeInsets.all(3.0),
+          width: 1400,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                  color: const Color.fromARGB(255, 0, 0, 0), width: 2)),
+          height: 200,
+          child: SingleChildScrollView(
             child: Text(
-              //rxData.join("\n"), TODO
-              rxData.toString(), //TODO
+              measures,
               style: const TextStyle(
                 color: Color.fromARGB(255, 210, 210, 210),
               ),
-            ))
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Column _sumUpData() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          ' Sum up',
+          style: TextStyle(
+              color: Color.fromARGB(255, 210, 210, 210),
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
+        ),
+        Container(
+          margin: const EdgeInsets.all(3.0),
+          width: 1400,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                  color: const Color.fromARGB(255, 0, 0, 0), width: 2)),
+          height: 200, // Altura fija
+          child: SingleChildScrollView(
+            child: Text(
+              sumUp,
+              style: const TextStyle(
+                color: Color.fromARGB(255, 210, 210, 210),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Column _initTextData() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          ' Init Text',
+          style: TextStyle(
+              color: Color.fromARGB(255, 210, 210, 210),
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
+        ),
+        Container(
+          margin: const EdgeInsets.all(3.0),
+          width: 1400,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                  color: const Color.fromARGB(255, 0, 0, 0), width: 2)),
+          height: 90,
+          child: SingleChildScrollView(
+            child: Text(
+              initText,
+              style: const TextStyle(
+                color: Color.fromARGB(255, 210, 210, 210),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
@@ -148,13 +216,21 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  void updateData(Map<int, List<double>> data) {
-    count++;
-    if (count > 10) {
-      rxData.clear();
-      //rxData.add(data);
-      count = 0;
-      //setState(() {});
-    }
+  void updateData(
+      int currentTime, double currentMeasure, double average, double max) {
+    sumUp = 'Current Measure: $currentMeasure\n';
+    sumUp += 'Average: $average\n';
+    sumUp += 'Max: $max\n';
+    sumUp += 'Time: $currentTime\n';
+
+    measures += 'Time: $currentTime\n';
+    measures += 'Measure: $currentMeasure\n';
+
+    setState(() {});
+  }
+
+  void updateInitText(String text) {
+    initText = text;
+    setState(() {});
   }
 }
