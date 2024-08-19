@@ -12,7 +12,6 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> {
   bool connect = false;
   String iconPath = 'assets/icons/bluetooth-slash.svg';
-  String initText = '';
   String measures = '';
   String sumUp = '';
   late BLEController ble;
@@ -37,7 +36,6 @@ class HomePageState extends State<HomePage> {
           ),
           _recieveData(),
           _sumUpData(),
-          _initTextData(),
         ],
       ),
       bottomNavigationBar: _bottomAppBar(),
@@ -136,38 +134,6 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  Column _initTextData() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          ' Init Text',
-          style: TextStyle(
-              color: Color.fromARGB(255, 210, 210, 210),
-              fontSize: 20,
-              fontWeight: FontWeight.bold),
-        ),
-        Container(
-          margin: const EdgeInsets.all(3.0),
-          width: 1400,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                  color: const Color.fromARGB(255, 0, 0, 0), width: 2)),
-          height: 90,
-          child: SingleChildScrollView(
-            child: Text(
-              initText,
-              style: const TextStyle(
-                color: Color.fromARGB(255, 210, 210, 210),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
   AppBar _appBar() {
     return AppBar(
       centerTitle: true,
@@ -226,11 +192,6 @@ class HomePageState extends State<HomePage> {
     measures += 'Time: $currentTime\n';
     measures += 'Measure: $currentMeasure\n';
 
-    setState(() {});
-  }
-
-  void updateInitText(String text) {
-    initText = text;
     setState(() {});
   }
 }

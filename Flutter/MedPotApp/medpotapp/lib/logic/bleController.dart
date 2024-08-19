@@ -49,7 +49,6 @@ class BLEController {
   double max = double.negativeInfinity;
   int nMeasures = 0;
   bool init = false;
-  String initText = '';
 
   List<double> rxData = [];
   /* A partir de aqui funciones de recepcion y envio de datos */
@@ -152,7 +151,7 @@ class BLEController {
                 .subscribeToCharacteristic(_txCharacteristic!);
 
             receivedDataStream!.listen((data) {
-              onReceiveData(utf8.decode(data));
+              decodeData(utf8.decode(data));
             });
             break;
           }
@@ -202,19 +201,6 @@ class BLEController {
       await flutterReactiveBle.writeCharacteristicWithResponse(
           _rxCharacteristic!,
           value: data.codeUnits);
-    }
-  }
-
-  void onReceiveData(String data) {
-    if (data.contains('Antes de la escala')) init = true;
-    if (data.contains('Readings:')) {
-      ui!.updateInitText(initText);
-      init = false;
-    }
-    if (init) {
-      initText += ("\n$data");
-    } else {
-      decodeData(data);
     }
   }
 
