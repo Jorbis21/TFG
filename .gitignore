@@ -1,0 +1,12 @@
+#vscode
+.vscode
+
+#Flutter
+*.dart_tool/*
+*.flutter-plugins
+*.flutter-plugins-dependencies
+pubspec.lock
+*.iml
+
+#miscelanious
+*.zip
