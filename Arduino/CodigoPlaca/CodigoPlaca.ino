@@ -53,7 +53,8 @@ class MyCallbacks: public BLECharacteristicCallbacks {
             envioMensaje("Tara realizada");
             break;
           case 's':
-            scale.set_scale(escala.getDouble("scale", NAN));
+            scale.set_scale(scale_val);
+            scale.tare();
             envioMensaje("Sincronizacion realizada");
             break;
           default:
